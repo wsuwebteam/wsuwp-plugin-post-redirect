@@ -21,7 +21,7 @@ class Metabox {
 			'wsuwp_post_redirect',           // Unique ID
 			'Redirect Post',  // Box title
 			__CLASS__ . '::render_metabox',  // Content callback, must be of type callable
-			'post',                 // Post type
+			array('post','news_article','press_release'),                 // Post type
 			'side'
 		);
 
@@ -40,8 +40,10 @@ class Metabox {
 
 
 	public static function save( $post_id, $post, $update ) {
+		
+		$post_types = array( 'post','news_article','press_release' );
 
-		if ( $update && 'post' === $post->post_type ) {
+		if ( $update && in_array( $post->post_type, $post_types, true ) ) {
 
 			require_once Plugin::get_plugin_dir() . '/classes/class-save-post.php';
 
