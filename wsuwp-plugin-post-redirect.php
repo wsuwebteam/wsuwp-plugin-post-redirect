@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WSUWP Post Redirect
-Version: 1.0.1
+Version: 1.0.2
 Description: Allow post to be redirected.
 Author: washingtonstateuniversity, Danial Bleile
 Author URI: https://github.com/washingtonstateuniversity/

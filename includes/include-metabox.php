@@ -17,13 +17,19 @@ class Metabox {
 
 	public static function add_metabox() {
 
-		add_meta_box(
-			'wsuwp_post_redirect',           // Unique ID
-			'Redirect Post',  // Box title
-			__CLASS__ . '::render_metabox',  // Content callback, must be of type callable
-			array('post','news_article','press_release'),                 // Post type
-			'side'
-		);
+		$post_types = array( 'post', 'news_article', 'press_release' );
+
+		foreach ( $post_types as $post_type ) {
+
+			add_meta_box(
+				'wsuwp_post_redirect',           // Unique ID
+				'Redirect Post',  // Box title
+				__CLASS__ . '::render_metabox',  // Content callback, must be of type callable
+				$post_type,                 // Post type
+				'side'
+			);
+
+		}
 
 	}
 
