@@ -12,7 +12,7 @@ class Redirect {
 
 	public static function do_redirect() {
 
-		if ( is_singular( 'post' ) ) {
+		if ( is_singular( 'post','news_article','press_release' ) ) {
 
 			$post_id = get_the_ID();
 
