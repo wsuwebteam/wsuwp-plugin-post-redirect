@@ -14,7 +14,7 @@ class Redirect {
 
 		$post_types = array( 'post', 'news_article', 'press_release' );
 
-		if ( in_array( get_post_type(), $post_types, true ) ) {
+		if ( is_singular() && in_array( get_post_type(), $post_types, true ) ) {
 
 			$post_id = get_the_ID();
 
